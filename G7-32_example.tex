@@ -1,0 +1,90 @@
+\documentclass[koi8-r,usehyperref]{G7-32}
+
+ \TableInChaper % таблицы будут нумероваться в пределах раздела
+ %\PicInChaper   % рисунки будут нумероваться в пределах раздела
+ \setlength\GostItemGap{2mm}% для красоты можно менять от 0мм
+
+ % Определяем заголовки для титульной страницы
+ \NirOrgLongName{Самара}{НИИ Всякой Фигни}
+ \NirBoss{Директор}{П.~П.~Петров}
+ \NirManager{Начальник отдела}{И.~И.~Иванов}
+
+\begin{document}
+\frontmatter
+ \NirTitlePage{111}{Исследование всякой фигни}
+ \Executors Здесь список исполнителей
+ \Referat
+ Отчет \totalpages~с, \totaltables~таблица, \totalfigures~рисунок, \totalbibs~источник.
+ \tableofcontents
+ \NormRefs Здесь некоторое количество нормативных ссылок
+ \Defines Определения всякие
+ \Abbreviations
+ \begin{abbreviation}
+  \item[ПБЗ] пункты без заголовка
+  \item[ВНЧ] вообще непонятно что
+ \end{abbreviation}
+
+ \Introduction Вступительное слово
+\mainmatter
+
+\chapter{О разном}
+\ttl
+\section{О всяком разном}
+\ttl
+\subsection{Это уж просто безобразие}
+\ttl
+\subsubsection{А это~--- форменное безобразие}\label{L1}
+Ну и что?
+\begin{enumerate}
+ \item\label{L1:I1}
+  а ничего;
+ \item
+  а именно:
+  \begin{enumerate}
+   \item
+    совсем ничего. Я бы даже сказал~--- всё это полный бред
+    и попытка добиться переноса пункта перечисления на новую строчку;
+   \item
+    абсолютно ничего~\cite{bib:test1}.
+  \end{enumerate}
+\end{enumerate}
+
+\section{О другом}
+\nsubsection Случаются и ПБЗ.
+
+И что, спросите вы? Уже писали~--- \pref{L1}{L1:I1}.
+
+Однако, воткнём тута табличку.
+
+\begin{longtable}{|c|c|p{110mm}|}
+ \multicolumn{3}{l}{\tablename~\thetable~---~Всякая фигня\label{T:T1}}\\\hline
+ Что & Куда & Откуда \\\hline
+\endfirsthead
+ \multicolumn{3}{l}{Продолжение таблицы~\ref{T:T1}}\\\hline
+ Что & Куда & Откуда \\\hline
+\endhead
+ Это & фиг знает & ну, если рассуждать здраво,  то х.е.з. \\\hline
+ То  & то же     & а это ВНЧ \\\hline
+\end{longtable}
+
+Ну и без рисунка \ref{fig1} нам никак не обойтись:
+
+\begin{figure}
+ \caption{Так себе рисуночек}\label{fig1}
+ \centering{
+  \begin{picture}(100,50)
+   \put(  0, 0){\line( 1, 0){100}}
+   \put(  0, 0){\line( 0, 1){ 50}}
+   \put(100,50){\line(-1, 0){100}}
+   \put(100,50){\line( 0,-1){ 50}}
+  \end{picture}
+ }
+\end{figure}
+
+\backmatter
+ \Conclusion на последок
+ \begin{thebibliography}{99}
+  \bibitem{bib:test1}
+  Нечто изданное некогда.
+ \end{thebibliography}
+\end{document}
