@@ -1,48 +1,42 @@
-% This package designed and commented in russian koi8-r encoding.
 %
-% Лицензия GNU GPL v2 и совместимые
+% п⌡п╦я├п╣п╫п╥п╦я▐ GNU GPL v2 п╦ я│п╬п╡п╪п╣я│я┌п╦п╪я▀п╣
 %
-% Стиль, задающий соответствие документа ГОСТ 2-105-95.
+% п║я┌п╦п╩я▄, п╥п╟п╢п╟я▌я┴п╦п╧ я│п╬п╬я┌п╡п╣я┌я│я┌п╡п╦п╣ п╢п╬п╨я┐п╪п╣п╫я┌п╟ п⌠п·п║п╒ 2-105-95.
 %
-% Автор - Алексей Томин, с помощью списка рассылки latex-gost-request@ice.ru
-% Все вопросы, замечания и пожелания сюда: mailto:alxt@yandex.ru
+% п░п╡я┌п╬я─ - п░п╩п╣п╨я│п╣п╧ п╒п╬п╪п╦п╫, я│ п©п╬п╪п╬я┴я▄я▌ я│п©п╦я│п╨п╟ я─п╟я│я│я▀п╩п╨п╦ latex-gost-request@ice.ru
+% п▓я│п╣ п╡п╬п©я─п╬я│я▀, п╥п╟п╪п╣я┤п╟п╫п╦я▐ п╦ п©п╬п╤п╣п╩п╟п╫п╦я▐ я│я▌п╢п╟: mailto:alxt@yandex.ru
 %
-% Дальнейшая разработка и поддержка - Михаил Конник,
-% связаться можно по адресу mydebianblog@gmail.com
+% п■п╟п╩я▄п╫п╣п╧я┬п╟я▐ я─п╟п╥я─п╟п╠п╬я┌п╨п╟ п╦ п©п╬п╢п╢п╣я─п╤п╨п╟ - п°п╦я┘п╟п╦п╩ п п╬п╫п╫п╦п╨,
+% я│п╡я▐п╥п╟я┌я▄я│я▐ п╪п╬п╤п╫п╬ п©п╬ п╟п╢я─п╣я│я┐ mydebianblog@gmail.com
 %
-% Используется:
-%  footmisc.sty для сносок снизу и нумерации на каждой странице
-%  amssymb      для русских "меньше или равно" "больше или равно"
-%  leqno.clo    формулы правильно
-%  caption2     оформление заголовков риснуков и таблиц
-%  icomma       запятая в формулах
-%  longtable    многостраничные таблицы
+% п≤я│п©п╬п╩я▄п╥я┐п╣я┌я│я▐:
+%  footmisc.sty п╢п╩я▐ я│п╫п╬я│п╬п╨ я│п╫п╦п╥я┐ п╦ п╫я┐п╪п╣я─п╟я├п╦п╦ п╫п╟ п╨п╟п╤п╢п╬п╧ я│я┌я─п╟п╫п╦я├п╣
+%  amssymb      п╢п╩я▐ я─я┐я│я│п╨п╦я┘ "п╪п╣п╫я▄я┬п╣ п╦п╩п╦ я─п╟п╡п╫п╬" "п╠п╬п╩я▄я┬п╣ п╦п╩п╦ я─п╟п╡п╫п╬"
+%  leqno.clo    я└п╬я─п╪я┐п╩я▀ п©я─п╟п╡п╦п╩я▄п╫п╬
+%  caption2     п╬я└п╬я─п╪п╩п╣п╫п╦п╣ п╥п╟пЁп╬п╩п╬п╡п╨п╬п╡ я─п╦я│п╫я┐п╨п╬п╡ п╦ я┌п╟п╠п╩п╦я├
+%  icomma       п╥п╟п©я▐я┌п╟я▐ п╡ я└п╬я─п╪я┐п╩п╟я┘
+%  longtable    п╪п╫п╬пЁп╬я│я┌я─п╟п╫п╦я┤п╫я▀п╣ я┌п╟п╠п╩п╦я├я▀
 
 \ProvidesPackage{G2-105}[2003/07/07 v1.00 General reqs. GOST 2.105-95]
 \NeedsTeXFormat{LaTeX2e}
 
 \newif\if@usehyperref\@usehyperreffalse
 \newif\if@usepscyr   \@usepscyrfalse
-\newcommand\Gost@encoding{}
 \newcommand\Gost@LineSpread{1.3}
 \DeclareOption{usehyperref}{\@usehyperreftrue}
 \DeclareOption{usepscyr}{\@usepscyrtrue}
-\DeclareOption{koi8-r}{\renewcommand\Gost@encoding{koi8-r}}
-\DeclareOption{cp1251}{\renewcommand\Gost@encoding{cp1251}}
-\DeclareOption{cp866} {\renewcommand\Gost@encoding{cp866} }
-\DeclareOption{utf8}{\renewcommand\Gost@encoding{utf8}}
 \DeclareOption{econommode}{\newcommand\Gost@LineSpread{1.3}\erroqweqwe}
 
 \ExecuteOptions{a4paper,14pt,final,koi8-r}
 \ProcessOptions
 
-%стиль страницы
+%я│я┌п╦п╩я▄ я│я┌я─п╟п╫п╦я├я▀
 \pagestyle{plain}
 \pagenumbering{arabic}
 \raggedbottom
 \onecolumn
 
-%нечто
+%п╫п╣я┤я┌п╬
 \newcommand\@pnumwidth{1.55em}
 \renewcommand\baselinestretch{}
 \@lowpenalty   51                     %
@@ -90,7 +84,7 @@
 \setlength\fboxrule{.4\p@}
 \newcommand\appendix{}
 
-% Счётчики общего числа страниц, таблиц, рисунков и источников
+% п║я┤я▒я┌я┤п╦п╨п╦ п╬п╠я┴п╣пЁп╬ я┤п╦я│п╩п╟ я│я┌я─п╟п╫п╦я├, я┌п╟п╠п╩п╦я├, я─п╦я│я┐п╫п╨п╬п╡ п╦ п╦я│я┌п╬я┤п╫п╦п╨п╬п╡
 \newcounter{totalpage}
 \newcounter{totaltable} \setcounter{totaltable} {0}
 \newcounter{totalfigure}\setcounter{totalfigure}{0}
@@ -98,10 +92,10 @@
 \newif\if@tablesonchapter \@tablesonchapterfalse
 \newif\if@figuresonchapter\@figuresonchapterfalse
 
-% На последней странице ставятся метки с номерами
-%  - последней страницы
-%  - числа таблиц, имеющих caption
-%  - числа рисунков, имеющих caption
+% п²п╟ п©п╬я│п╩п╣п╢п╫п╣п╧ я│я┌я─п╟п╫п╦я├п╣ я│я┌п╟п╡я▐я┌я│я▐ п╪п╣я┌п╨п╦ я│ п╫п╬п╪п╣я─п╟п╪п╦
+%  - п©п╬я│п╩п╣п╢п╫п╣п╧ я│я┌я─п╟п╫п╦я├я▀
+%  - я┤п╦я│п╩п╟ я┌п╟п╠п╩п╦я├, п╦п╪п╣я▌я┴п╦я┘ caption
+%  - я┤п╦я│п╩п╟ я─п╦я│я┐п╫п╨п╬п╡, п╦п╪п╣я▌я┴п╦я┘ caption
 \def\totalobjects@putlabel{%
  \addtocounter{totalpage}  {\c@page}
  \addtocounter{totaltable} {\c@table}
@@ -116,19 +110,19 @@
 }
 \AtEndDocument{\totalobjects@putlabel}
 
-% Команды отображение общего числа ...
+% п п╬п╪п╟п╫п╢я▀ п╬я┌п╬п╠я─п╟п╤п╣п╫п╦п╣ п╬п╠я┴п╣пЁп╬ я┤п╦я│п╩п╟ ...
 \newcommand\totalpages  {\pageref{reftotalpages}}
 \newcommand\totaltables {\ref{reftotaltables}   }
 \newcommand\totalfigures{\ref{reftotalfigures}  }
 \newcommand\totalbibs   {\ref{reftotalbibs}     }
 
-% 3.6 Абзацный отступ - 15..17 мм
+% 3.6 п░п╠п╥п╟я├п╫я▀п╧ п╬я┌я│я┌я┐п© - 15..17 п╪п╪
 \setlength\parindent{15mm}
 
-% 4.1.1 - 4.1.6 Деление документа
+% 4.1.1 - 4.1.6 п■п╣п╩п╣п╫п╦п╣ п╢п╬п╨я┐п╪п╣п╫я┌п╟
 
-%  Команды для подстройки вида заголовков:
-%   расстояние между заголовком и текстом
+%  п п╬п╪п╟п╫п╢я▀ п╢п╩я▐ п©п╬п╢я│я┌я─п╬п╧п╨п╦ п╡п╦п╢п╟ п╥п╟пЁп╬п╩п╬п╡п╨п╬п╡:
+%   я─п╟я│я│я┌п╬я▐п╫п╦п╣ п╪п╣п╤п╢я┐ п╥п╟пЁп╬п╩п╬п╡п╨п╬п╪ п╦ я┌п╣п╨я│я┌п╬п╪
 \newlength\GostAfterTitleSkip    \setlength\GostAfterTitleSkip    {3.2ex}%15mm}
 \newlength\GostBetweenTitleSkip  \setlength\GostBetweenTitleSkip  {1.8ex}%8mm}
 \newlength\GostBeforTitleSkip    \setlength\GostBeforTitleSkip    {1.8ex}%\GostAfterTitleSkip}
@@ -140,12 +134,12 @@
 \newlength{\Gost@TitleDropSkip}
  \setlength\Gost@TitleDropSkip{\GostBetweenTitleSkip}
  \addtolength\Gost@TitleDropSkip{-\GostAfterTitleSkip}
-%  стиль всех заголовков
+%  я│я┌п╦п╩я▄ п╡я│п╣я┘ п╥п╟пЁп╬п╩п╬п╡п╨п╬п╡
 \newcommand\GostTitleStyle{\normalfont\bfseries}
 \newcommand\Gost@MainChapterStyle{}
 \newcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}
 
-%  Раздел
+%  п═п╟п╥п╢п╣п╩
 \newcounter{chapter}
 \renewcommand\thechapter{\@arabic\c@chapter}
 \newcommand\chapter{%
@@ -164,7 +158,7 @@
 \newcommand\apart[2]{\chapter {#2\label{#1}}}
 \newcommand\cpart[2]{\chapter*{#2\label{#1}}}
 
-%  Подраздел
+%  п÷п╬п╢я─п╟п╥п╢п╣п╩
 \newcounter{section}[chapter]
 \renewcommand\thesection{\thechapter.\@arabic\c@section}
 \newcommand\section{%
@@ -174,17 +168,17 @@
 }
 \newcommand{\asubpart}[2]{\section{#2\label{#1}}}
 
-%  Пункт
+%  п÷я┐п╫п╨я┌
 \newcounter{subsection}[section]
 \renewcommand\thesubsection{\thesection.\@arabic\c@subsection}
-%  ... попадающий в оглавление
+%  ... п©п╬п©п╟п╢п╟я▌я┴п╦п╧ п╡ п╬пЁп╩п╟п╡п╩п╣п╫п╦п╣
 \newcommand\subsection{%
  \@startsection{subsection}{2}%
  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
  {\GostTitleStyle}%
 }
 \newcommand{\apara}[2]{\subsection{#2\label{#1}}}
-%  ... не попадающий в оглавление
+%  ... п╫п╣ п©п╬п©п╟п╢п╟я▌я┴п╦п╧ п╡ п╬пЁп╩п╟п╡п╩п╣п╫п╦п╣
 \newcommand\nsubsection{%
  \par\vspace{\GostBeforNoTitleSkip}%
  \refstepcounter{subsection}\thesubsection%
@@ -192,17 +186,17 @@
 }
 \newcommand{\npara}[1]{\nsubsection\label{#1}}
 
-%  Подпункт
+%  п÷п╬п╢п©я┐п╫п╨я┌
 \newcounter{subsubsection}[subsection]
 \renewcommand\thesubsubsection{\thesubsection.\@arabic\c@subsubsection}
-%  ... попадающий в оглавление
+%  ... п©п╬п©п╟п╢п╟я▌я┴п╦п╧ п╡ п╬пЁп╩п╟п╡п╩п╣п╫п╦п╣
 \newcommand\subsubsection{%
  \@startsection{subsubsection}{4}%
  {\GostTitleIndent}{\GostBeforTitleSkip}{\GostAfterTitleSkip}%
  {\GostTitleStyle}%
 }
 \newcommand\asubpara[2]{\subsubsection{#2\label{#1}}}
-%  ... не попадающий в оглавление
+%  ... п╫п╣ п©п╬п©п╟п╢п╟я▌я┴п╦п╧ п╡ п╬пЁп╩п╟п╡п╩п╣п╫п╦п╣
 \newcommand\nsubsubsection{%
  \par\vspace{\GostBeforNoTitleSkip}%
  \refstepcounter{subsubsection}\thesubsubsection%
@@ -211,65 +205,61 @@
 \newcommand\nsubpara[1]{\nsubsubsection\label{#1}}
 
 \newlength{\NirTitleDropSkip}
-%  Эта команда должна вставлятся между двумя заголовками
+%  п╜я┌п╟ п╨п╬п╪п╟п╫п╢п╟ п╢п╬п╩п╤п╫п╟ п╡я│я┌п╟п╡п╩я▐я┌я│я▐ п╪п╣п╤п╢я┐ п╢п╡я┐п╪я▐ п╥п╟пЁп╬п╩п╬п╡п╨п╟п╪п╦
 \newcommand\ttl{\vspace{\Gost@TitleDropSkip}}
 
-%  Нумеруются все заголовки
+%  п²я┐п╪п╣я─я┐я▌я┌я│я▐ п╡я│п╣ п╥п╟пЁп╬п╩п╬п╡п╨п╦
 \setcounter{secnumdepth}{3}
-%  в оглавлении- тоже могут быть все.
-\setcounter{tocdepth}{4} %% virens: обычно только первый подраздел
-%  перенос в словах-с-дефисом
-\lccode`\-=`\-
-\defaulthyphenchar=127
+%  п╡ п╬пЁп╩п╟п╡п╩п╣п╫п╦п╦- я┌п╬п╤п╣ п╪п╬пЁя┐я┌ п╠я▀я┌я▄ п╡я│п╣.
+\setcounter{tocdepth}{4} %% virens: п╬п╠я▀я┤п╫п╬ я┌п╬п╩я▄п╨п╬ п©п╣я─п╡я▀п╧ п©п╬п╢я─п╟п╥п╢п╣п╩
 
-% Импорт необходимых пакетов
+% п≤п╪п©п╬я─я┌ п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀я┘ п©п╟п╨п╣я┌п╬п╡
 \if@usehyperref
  \RequirePackage[unicode]{hyperref}
 \fi
 \if@usepscyr
   \RequirePackage[math]{pscyr}
 \fi
-\RequirePackage{mathtext}%русские буквы в формулах
-\RequirePackage[T2A]{fontenc}
-\RequirePackage[\Gost@encoding]{inputenc}
-\RequirePackage[english,russian]{babel}
+\RequirePackage{mathtext}%я─я┐я│я│п╨п╦п╣ п╠я┐п╨п╡я▀ п╡ я└п╬я─п╪я┐п╩п╟я┘
+\RequirePackage{polyglossia}
+\setdefaultlanguage{russian}
 \RequirePackage{flafter}
 
-% 4.2.7 Перечисления
+% 4.2.7 п÷п╣я─п╣я┤п╦я│п╩п╣п╫п╦я▐
 
 \newlength{\GostItemGap}
 \newlength{\GostItemIndent}
 \newcommand\Gost@List{%
- \setlength{\itemsep}{0mm}%                пробел между последовательными элементами
- \setlength{\topsep}{1mm}%                 отступ от текста до перечня
- \setlength{\partopsep}{0mm}%              дополнительный отступ,  если начали абзац
- \setlength{\parsep}{1mm}%                 расстояние между абзацами внутри пункта
- \setlength{\leftmargin}{\GostItemIndent}% левый отступ до текста
- \setlength{\itemindent}{\GostItemGap}%    дополнительный левый отступ первой строчки
- \setlength{\labelsep}{2\GostItemGap}%     от метки до текста
+ \setlength{\itemsep}{0mm}%                п©я─п╬п╠п╣п╩ п╪п╣п╤п╢я┐ п©п╬я│п╩п╣п╢п╬п╡п╟я┌п╣п╩я▄п╫я▀п╪п╦ я█п╩п╣п╪п╣п╫я┌п╟п╪п╦
+ \setlength{\topsep}{1mm}%                 п╬я┌я│я┌я┐п© п╬я┌ я┌п╣п╨я│я┌п╟ п╢п╬ п©п╣я─п╣я┤п╫я▐
+ \setlength{\partopsep}{0mm}%              п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫я▀п╧ п╬я┌я│я┌я┐п©,  п╣я│п╩п╦ п╫п╟я┤п╟п╩п╦ п╟п╠п╥п╟я├
+ \setlength{\parsep}{1mm}%                 я─п╟я│я│я┌п╬я▐п╫п╦п╣ п╪п╣п╤п╢я┐ п╟п╠п╥п╟я├п╟п╪п╦ п╡п╫я┐я┌я─п╦ п©я┐п╫п╨я┌п╟
+ \setlength{\leftmargin}{\GostItemIndent}% п╩п╣п╡я▀п╧ п╬я┌я│я┌я┐п© п╢п╬ я┌п╣п╨я│я┌п╟
+ \setlength{\itemindent}{\GostItemGap}%    п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫я▀п╧ п╩п╣п╡я▀п╧ п╬я┌я│я┌я┐п© п©п╣я─п╡п╬п╧ я│я┌я─п╬я┤п╨п╦
+ \setlength{\labelsep}{2\GostItemGap}%     п╬я┌ п╪п╣я┌п╨п╦ п╢п╬ я┌п╣п╨я│я┌п╟
 }
 \renewcommand{\@listI} {\Gost@List}
 \renewcommand{\@listii}{\Gost@List}
-\setlength\GostItemGap{2mm} % небольшие отступы для пунктов перечисления
+\setlength\GostItemGap{2mm} % п╫п╣п╠п╬п╩я▄я┬п╦п╣ п╬я┌я│я┌я┐п©я▀ п╢п╩я▐ п©я┐п╫п╨я┌п╬п╡ п©п╣я─п╣я┤п╦я│п╩п╣п╫п╦я▐
 \setlength\leftmarginii{\parindent}
 \setlength\GostItemIndent{\parindent}
  \addtolength\GostItemIndent{-\GostItemGap}
 
-%  ненумерованные перечисления
+%  п╫п╣п╫я┐п╪п╣я─п╬п╡п╟п╫п╫я▀п╣ п©п╣я─п╣я┤п╦я│п╩п╣п╫п╦я▐
 \newcommand{\labelitemi}{--}
 
-%  нумерованные перечисления
+%  п╫я┐п╪п╣я─п╬п╡п╟п╫п╫я▀п╣ п©п╣я─п╣я┤п╦я│п╩п╣п╫п╦я▐
 \renewcommand\theenumi {\asbuk{enumi}}
 \renewcommand\theenumii{\arabic{enumii}}
 \newcommand\labelenumi{\theenumi)}
 \newcommand\labelenumii{\theenumii)}
 \renewcommand\p@enumii{\theenumi}
 
-%  ссылка на нумерованное перечисление
+%  я│я│я▀п╩п╨п╟ п╫п╟ п╫я┐п╪п╣я─п╬п╡п╟п╫п╫п╬п╣ п©п╣я─п╣я┤п╦я│п╩п╣п╫п╦п╣
 \newcommand\pref[2]{%
- \cyrp\cyre\cyrr\cyre\cyrch\cyri\cyrs\cyrl\cyre\cyrn\cyri\cyre~\ref{#2})~\ref{#1}}
+ п©п╣я─п╣я┤п╦я│п╩п╣п╫п╦п╣~\ref{#2})~\ref{#1}}
 
-%перечисление типа abbreviation - для списка сокращения
+%п©п╣я─п╣я┤п╦я│п╩п╣п╫п╦п╣ я┌п╦п©п╟ abbreviation - п╢п╩я▐ я│п©п╦я│п╨п╟ я│п╬п╨я─п╟я┴п╣п╫п╦я▐
 \newenvironment{abbreviation}{%
  \list{}{%
   \labelwidth\z@ \itemindent-\leftmargin \leftmargin 25mm%
@@ -280,9 +270,9 @@
 }
 \newcommand*\abbreviationlabel[1]{\hspace\labelsep\normalfont #1~---}
 
-% 4.2.15 - 4.2.19 Формулы
+% 4.2.15 - 4.2.19 п╓п╬я─п╪я┐п╩я▀
 
-\RequirePackage{amssymb} % для русских "меньше или равно" "больше или равно"
+\RequirePackage{amssymb} % п╢п╩я▐ я─я┐я│я│п╨п╦я┘ "п╪п╣п╫я▄я┬п╣ п╦п╩п╦ я─п╟п╡п╫п╬" "п╠п╬п╩я▄я┬п╣ п╦п╩п╦ я─п╟п╡п╫п╬"
 \RequirePackage{icomma}
 \input{leqno.clo}
 
@@ -295,23 +285,23 @@
 \newlength\Gost@@EqRemLen
 \newenvironment{eqrem}{%
  \begin{tabular}{p{\Gost@@EqRemLen}p{\Gost@EqRemLen}}
-  \cyrg\cyrd\cyre
+  пЁп╢п╣
 }{
  \end{tabular}
 }
-% пояснения м.б. в виде
+% п©п╬я▐я│п╫п╣п╫п╦я▐ п╪.п╠. п╡ п╡п╦п╢п╣
 %  \begin{eqrem}
-%   & X~--- неизвестная \\
-%   & Y~--- ещё неизвестная \\
+%   & X~--- п╫п╣п╦п╥п╡п╣я│я┌п╫п╟я▐ \\
+%   & Y~--- п╣я┴я▒ п╫п╣п╦п╥п╡п╣я│я┌п╫п╟я▐ \\
 %  \end{eqrem}
 
-% ... допускается нумерация формул в пределах раздела
+% ... п╢п╬п©я┐я│п╨п╟п╣я┌я│я▐ п╫я┐п╪п╣я─п╟я├п╦я▐ я└п╬я─п╪я┐п╩ п╡ п©я─п╣п╢п╣п╩п╟я┘ я─п╟п╥п╢п╣п╩п╟
 \newcommand\EqInChaper{%
  \@addtoreset{equation}{chapter}%
  \renewcommand{\theequation}{(\thechapter.\arabic{equation})}%
 }
 
-%Перенос формул по =+-
+%п÷п╣я─п╣п╫п╬я│ я└п╬я─п╪я┐п╩ п©п╬ =+-
 %\begingroup
 %\catcode`\+\active\gdef+{\mathchar8235\nobreak\discretionary{}%
 % {\usefont{OT1}{cmr}{m}{n}\char43}{}}
@@ -321,7 +311,7 @@
 % {\usefont{OT1}{cmr}{m}{n}\char61}{}}
 %\endgroup
 %\def\cdot{\mathchar8705\nobreak\discretionary{}%
-% {\usefont{OMS}{cmsу}{m}{n}\char1}{}}
+% {\usefont{OMS}{cmsy}{m}{n}\char1}{}}
 %\def\times{\mathchar8706\nobreak\discretionary{}%
 % {\usefont{OMS}{cmsy}{m}{n}\char2}{}}
 %\mathcode`\==32768
@@ -331,7 +321,7 @@
 \renewcommand\leq{\leqslant}
 \renewcommand\geq{\geqslant}
 
-% 4.3.1 - 4.3.3 Иллюстрации
+% 4.3.1 - 4.3.3 п≤п╩п╩я▌я│я┌я─п╟я├п╦п╦
 
 \newcommand\@makecaption{}
 \RequirePackage[center]{caption2}
@@ -345,28 +335,28 @@
 \newenvironment{figure} {\@float   {figure}}{\end@float   }
 \newenvironment{figure*}{\@dblfloat{figure}}{\end@dblfloat}
 \renewcommand\captionlabeldelim{ ---}
-% \renewcommand\captionmargin{0.2cm} %% virens: это приводит к существенному сужению ширины подписи!!!!
+% \renewcommand\captionmargin{0.2cm} %% virens: я█я┌п╬ п©я─п╦п╡п╬п╢п╦я┌ п╨ я│я┐я┴п╣я│я┌п╡п╣п╫п╫п╬п╪я┐ я│я┐п╤п╣п╫п╦я▌ я┬п╦я─п╦п╫я▀ п©п╬п╢п©п╦я│п╦!!!!
 
-%  Подпись к рисунку
-\addto\captionsrussian{\def\figurename{{\cyr\CYRR\cyri\cyrs\cyru\cyrn\cyro\cyrk}}}
+%  п÷п╬п╢п©п╦я│я▄ п╨ я─п╦я│я┐п╫п╨я┐
+\addto\captionsrussian{\def\figurename{п═п╦я│я┐п╫п╬п╨}}
 
-% ... допускается нумерация рисунков в пределах раздела
+% ... п╢п╬п©я┐я│п╨п╟п╣я┌я│я▐ п╫я┐п╪п╣я─п╟я├п╦я▐ я─п╦я│я┐п╫п╨п╬п╡ п╡ п©я─п╣п╢п╣п╩п╟я┘ я─п╟п╥п╢п╣п╩п╟
 \newcommand\PicInChaper{%
  \@addtoreset{figure}{chapter}%
  \@figuresonchaptertrue%
  \renewcommand{\thefigure}{\thechapter.\arabic{figure}}%
 }
 
-% 4.4 - таблицы
-% ... допускается нумерация таблиц в пределах раздела
+% 4.4 - я┌п╟п╠п╩п╦я├я▀
+% ... п╢п╬п©я┐я│п╨п╟п╣я┌я│я▐ п╫я┐п╪п╣я─п╟я├п╦я▐ я┌п╟п╠п╩п╦я├ п╡ п©я─п╣п╢п╣п╩п╟я┘ я─п╟п╥п╢п╣п╩п╟
 \newcommand\TableInChaper{%
  \@addtoreset{table}{chapter}%
  \@tablesonchaptertrue%
  \renewcommand{\thetable}{\thechapter.\arabic{table}}%
 }
 
-\RequirePackage{longtable}% многостраничные таблицы
-%   Для выравнивания длинных таблиц
+\RequirePackage{longtable}% п╪п╫п╬пЁп╬я│я┌я─п╟п╫п╦я┤п╫я▀п╣ я┌п╟п╠п╩п╦я├я▀
+%   п■п╩я▐ п╡я▀я─п╟п╡п╫п╦п╡п╟п╫п╦я▐ п╢п╩п╦п╫п╫я▀я┘ я┌п╟п╠п╩п╦я├
 \LTleft=\z@
 \LTright=\fill
 \def\LT@makecaption#1#2#3{%
@@ -376,7 +366,7 @@
           \endgraf}%
     \hss}}}
 
-%  4.3.4 - 4.1.14 Приложения
+%  4.3.4 - 4.1.14 п÷я─п╦п╩п╬п╤п╣п╫п╦я▐
 \renewcommand\appendix{\par
  \setcounter{secnumdepth}{4}
  \setcounter{chapter}{0}%
@@ -387,30 +377,30 @@
  \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
 }
 
-% 4.5 Сноски
+% 4.5 п║п╫п╬я│п╨п╦
 \RequirePackage[perpage,bottom]{footmisc}
 
-% Части документа- для выбора вида заголовков и т.д.
-%  введение, обозначения
+% п╖п╟я│я┌п╦ п╢п╬п╨я┐п╪п╣п╫я┌п╟- п╢п╩я▐ п╡я▀п╠п╬я─п╟ п╡п╦п╢п╟ п╥п╟пЁп╬п╩п╬п╡п╨п╬п╡ п╦ я┌.п╢.
+%  п╡п╡п╣п╢п╣п╫п╦п╣, п╬п╠п╬п╥п╫п╟я┤п╣п╫п╦я▐
 \newcommand\frontmatter{%
  \setcounter{secnumdepth}{-1}%
  \renewcommand\Gost@ChapterStyle{\centering}%
  \setlength\Gost@ChapterIndent{0mm}%
 }
-%  основная часть
+%  п╬я│п╫п╬п╡п╫п╟я▐ я┤п╟я│я┌я▄
 \newcommand\mainmatter{
  \setcounter{secnumdepth}{4}
  \renewcommand\Gost@ChapterStyle{\Gost@MainChapterStyle}%
  \setlength\Gost@ChapterIndent{\Gost@MainChapterIndent}%
 }
-%  заключение, библиография
+%  п╥п╟п╨п╩я▌я┤п╣п╫п╦п╣, п╠п╦п╠п╩п╦п╬пЁя─п╟я└п╦я▐
 \newcommand\backmatter{
  \setcounter{secnumdepth}{-1}
  \renewcommand\Gost@ChapterStyle{\centering}%
  \setlength\Gost@ChapterIndent{0mm}%
 }
 
-%всякие оглавления
+%п╡я│я▐п╨п╦п╣ п╬пЁп╩п╟п╡п╩п╣п╫п╦я▐
 \newcommand\tableofcontents{\chapter*{\contentsname}\@starttoc{toc}}
 \newcommand\listoffigures{\chapter*{\listfigurename}\@starttoc{lof}}
 \newcommand\listoftables{\chapter*{\listtablename}\@starttoc{lot}}
@@ -421,20 +411,20 @@
 \newcommand{\l@subsubsection}{\@dottedtocline{4}{12mm}{4.1em}}
 \newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand*\l@table {\@dottedtocline{1}{1.5em}{2.3em}}
-\newcommand\@tocrmarg{2.55em} %отступ правого края оглавления перенесённых строк
-\newcommand\@dotsep{4.5}      %между точками в оглавлении в em
-\linespread{\Gost@LineSpread} %полуторный межстрочный интервал
+\newcommand\@tocrmarg{2.55em} %п╬я┌я│я┌я┐п© п©я─п╟п╡п╬пЁп╬ п╨я─п╟я▐ п╬пЁп╩п╟п╡п╩п╣п╫п╦я▐ п©п╣я─п╣п╫п╣я│я▒п╫п╫я▀я┘ я│я┌я─п╬п╨
+\newcommand\@dotsep{4.5}      %п╪п╣п╤п╢я┐ я┌п╬я┤п╨п╟п╪п╦ п╡ п╬пЁп╩п╟п╡п╩п╣п╫п╦п╦ п╡ em
+\linespread{\Gost@LineSpread} %п©п╬п╩я┐я┌п╬я─п╫я▀п╧ п╪п╣п╤я│я┌я─п╬я┤п╫я▀п╧ п╦п╫я┌п╣я─п╡п╟п╩
 
 \AtBeginDocument{%
  \makeatletter%
   \setlength\Gost@EqRemLen{\textwidth}%
   \addtolength\Gost@EqRemLen{-10mm}%
-  \settowidth\Gost@@EqRemLen{\cyrg\cyrd\cyre}%
+  \settowidth\Gost@@EqRemLen{пЁп╢п╣}%
   \addtolength\Gost@EqRemLen{-\Gost@@EqRemLen}%
  \makeatother%
 }
 
-%библиография
+%п╠п╦п╠п╩п╦п╬пЁя─п╟я└п╦я▐
 \newdimen\bibindent
 \newenvironment{thebibliography}[1]{
  \chapter*{\bibname}\addcontentsline{toc}{chapter}{\bibname}%
@@ -457,7 +447,7 @@
 \renewcommand\@biblabel{}%
 \setlength\bibindent{1.5em}
 
-%индекс
+%п╦п╫п╢п╣п╨я│
 \newenvironment{theindex}{
                 \columnseprule \z@
                 \columnsep 35\p@
@@ -473,12 +463,12 @@
 \newcommand\subsubitem{\@idxitem \hspace*{30\p@}}
 \newcommand\indexspace{\par \vskip 10\p@ \@plus5\p@ \@minus3\p@\relax}
 
-%для русского языка
+%п╢п╩я▐ я─я┐я│я│п╨п╬пЁп╬ я▐п╥я▀п╨п╟
 \righthyphenmin=2
 \unitlength=1mm
 \clubpenalty=10000
 \widowpenalty=10000
-%что-то, связаннное с разрывом строк
+%я┤я┌п╬-я┌п╬, я│п╡я▐п╥п╟п╫п╫п╫п╬п╣ я│ я─п╟п╥я─я▀п╡п╬п╪ я│я┌я─п╬п╨
 \@beginparpenalty -\@lowpenalty
 \@endparpenalty   -\@lowpenalty
 \@itempenalty     -\@lowpenalty

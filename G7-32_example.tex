@@ -1,76 +1,87 @@
-\documentclass[koi8-r,usehyperref]{G7-32}
+\documentclass[usehyperref]{G7-32}
 
- \TableInChaper % таблицы будут нумероваться в пределах раздела
- %\PicInChaper   % рисунки будут нумероваться в пределах раздела
- \setlength\GostItemGap{2mm}% для красоты можно менять от 0мм
+\defaultfontfeatures{Mapping=tex-text, Scale=MatchLowercase} % to support long dashes
+\newfontfamily\cyrillicfont{Times New Roman}
+\setmainfont{Times New Roman}
+\setromanfont{Times New Roman}
 
- % Определяем заголовки для титульной страницы
- \NirOrgLongName{Самара}{НИИ Всякой Фигни}
- \NirBoss{Директор}{П.~П.~Петров}
- \NirManager{Начальник отдела}{И.~И.~Иванов}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\PolyglossiaSetup{russian}{indentfirst=true}
+
+\newcommand{\No}{\textnumero{}}
+
+ \TableInChaper % я┌п╟п╠п╩п╦я├я▀ п╠я┐п╢я┐я┌ п╫я┐п╪п╣я─п╬п╡п╟я┌я▄я│я▐ п╡ п©я─п╣п╢п╣п╩п╟я┘ я─п╟п╥п╢п╣п╩п╟
+ %\PicInChaper   % я─п╦я│я┐п╫п╨п╦ п╠я┐п╢я┐я┌ п╫я┐п╪п╣я─п╬п╡п╟я┌я▄я│я▐ п╡ п©я─п╣п╢п╣п╩п╟я┘ я─п╟п╥п╢п╣п╩п╟
+ \setlength\GostItemGap{2mm}% п╢п╩я▐ п╨я─п╟я│п╬я┌я▀ п╪п╬п╤п╫п╬ п╪п╣п╫я▐я┌я▄ п╬я┌ 0п╪п╪
+
+ % п·п©я─п╣п╢п╣п╩я▐п╣п╪ п╥п╟пЁп╬п╩п╬п╡п╨п╦ п╢п╩я▐ я┌п╦я┌я┐п╩я▄п╫п╬п╧ я│я┌я─п╟п╫п╦я├я▀
+ \NirOrgLongName{п²п≤п≤ п▓я│я▐п╨п╬п╧ п╓п╦пЁп╫п╦}
+ \NirBoss{п■п╦я─п╣п╨я┌п╬я─}{п÷.~п÷.~п÷п╣я┌я─п╬п╡}
+ \NirManager{п²п╟я┤п╟п╩я▄п╫п╦п╨ п╬я┌п╢п╣п╩п╟}{п≤.~п≤.~п≤п╡п╟п╫п╬п╡}
 
 \begin{document}
 \frontmatter
- \NirTitlePage{111}{Исследование всякой фигни}
- \Executors Здесь список исполнителей
+ \NirTitle{111}{п≤я│я│п╩п╣п╢п╬п╡п╟п╫п╦п╣ п╡я│я▐п╨п╬п╧ я└п╦пЁп╫п╦}
+ \Executors п≈п╢п╣я│я▄ я│п©п╦я│п╬п╨ п╦я│п©п╬п╩п╫п╦я┌п╣п╩п╣п╧
  \Referat
- Отчет \totalpages~с, \totaltables~таблица, \totalfigures~рисунок, \totalbibs~источник.
+ п·я┌я┤п╣я┌ \totalpages~я│, \totaltables~я┌п╟п╠п╩п╦я├п╟, \totalfigures~я─п╦я│я┐п╫п╬п╨, \totalbibs~п╦я│я┌п╬я┤п╫п╦п╨.
  \tableofcontents
- \NormRefs Здесь некоторое количество нормативных ссылок
- \Defines Определения всякие
+ \NormRefs п≈п╢п╣я│я▄ п╫п╣п╨п╬я┌п╬я─п╬п╣ п╨п╬п╩п╦я┤п╣я│я┌п╡п╬ п╫п╬я─п╪п╟я┌п╦п╡п╫я▀я┘ я│я│я▀п╩п╬п╨
+ \Defines п·п©я─п╣п╢п╣п╩п╣п╫п╦я▐ п╡я│я▐п╨п╦п╣
  \Abbreviations
  \begin{abbreviation}
-  \item[ПБЗ] пункты без заголовка
-  \item[ВНЧ] вообще непонятно что
+  \item[п÷п▒п≈] п©я┐п╫п╨я┌я▀ п╠п╣п╥ п╥п╟пЁп╬п╩п╬п╡п╨п╟
+  \item[п▓п²п╖] п╡п╬п╬п╠я┴п╣ п╫п╣п©п╬п╫я▐я┌п╫п╬ я┤я┌п╬
  \end{abbreviation}
 
- \Introduction Вступительное слово
+ \Introduction п▓я│я┌я┐п©п╦я┌п╣п╩я▄п╫п╬п╣ я│п╩п╬п╡п╬
 \mainmatter
 
-\chapter{О разном}
+\chapter{п· я─п╟п╥п╫п╬п╪}
 \ttl
-\section{О всяком разном}
+\section{п· п╡я│я▐п╨п╬п╪ я─п╟п╥п╫п╬п╪}
 \ttl
-\subsection{Это уж просто безобразие}
+\subsection{п╜я┌п╬ я┐п╤ п©я─п╬я│я┌п╬ п╠п╣п╥п╬п╠я─п╟п╥п╦п╣}
 \ttl
-\subsubsection{А это~--- форменное безобразие}\label{L1}
-Ну и что?
+\subsubsection{п░ я█я┌п╬~--- я└п╬я─п╪п╣п╫п╫п╬п╣ п╠п╣п╥п╬п╠я─п╟п╥п╦п╣}\label{L1}
+п²я┐ п╦ я┤я┌п╬?
 \begin{enumerate}
  \item\label{L1:I1}
-  а ничего;
+  п╟ п╫п╦я┤п╣пЁп╬;
  \item
-  а именно:
+  п╟ п╦п╪п╣п╫п╫п╬:
   \begin{enumerate}
    \item
-    совсем ничего. Я бы даже сказал~--- всё это полный бред
-    и попытка добиться переноса пункта перечисления на новую строчку;
+    я│п╬п╡я│п╣п╪ п╫п╦я┤п╣пЁп╬. п╞ п╠я▀ п╢п╟п╤п╣ я│п╨п╟п╥п╟п╩~--- п╡я│я▒ я█я┌п╬ п©п╬п╩п╫я▀п╧ п╠я─п╣п╢
+    п╦ п©п╬п©я▀я┌п╨п╟ п╢п╬п╠п╦я┌я▄я│я▐ п©п╣я─п╣п╫п╬я│п╟ п©я┐п╫п╨я┌п╟ п©п╣я─п╣я┤п╦я│п╩п╣п╫п╦я▐ п╫п╟ п╫п╬п╡я┐я▌ я│я┌я─п╬я┤п╨я┐;
    \item
-    абсолютно ничего~\cite{bib:test1}.
+    п╟п╠я│п╬п╩я▌я┌п╫п╬ п╫п╦я┤п╣пЁп╬~\cite{bib:test1}.
   \end{enumerate}
 \end{enumerate}
 
-\section{О другом}
-\nsubsection Случаются и ПБЗ.
+\section{п· п╢я─я┐пЁп╬п╪}
+\nsubsection п║п╩я┐я┤п╟я▌я┌я│я▐ п╦ п÷п▒п≈.
 
-И что, спросите вы? Уже писали~--- \pref{L1}{L1:I1}.
+п≤ я┤я┌п╬, я│п©я─п╬я│п╦я┌п╣ п╡я▀? пёп╤п╣ п©п╦я│п╟п╩п╦~--- \pref{L1}{L1:I1}.
 
-Однако, воткнём тута табличку.
+п·п╢п╫п╟п╨п╬, п╡п╬я┌п╨п╫я▒п╪ я┌я┐я┌п╟ я┌п╟п╠п╩п╦я┤п╨я┐.
 
 \begin{longtable}{|c|c|p{110mm}|}
- \multicolumn{3}{l}{\tablename~\thetable~---~Всякая фигня\label{T:T1}}\\\hline
- Что & Куда & Откуда \\\hline
+ \multicolumn{3}{l}{\tablename~\thetable~---~п▓я│я▐п╨п╟я▐ я└п╦пЁп╫я▐\label{T:T1}}\\\hline
+ п╖я┌п╬ & п я┐п╢п╟ & п·я┌п╨я┐п╢п╟ \\\hline
 \endfirsthead
- \multicolumn{3}{l}{Продолжение таблицы~\ref{T:T1}}\\\hline
- Что & Куда & Откуда \\\hline
+ \multicolumn{3}{l}{п÷я─п╬п╢п╬п╩п╤п╣п╫п╦п╣ я┌п╟п╠п╩п╦я├я▀~\ref{T:T1}}\\\hline
+ п╖я┌п╬ & п я┐п╢п╟ & п·я┌п╨я┐п╢п╟ \\\hline
 \endhead
- Это & фиг знает & ну, если рассуждать здраво,  то х.е.з. \\\hline
- То  & то же     & а это ВНЧ \\\hline
+ п╜я┌п╬ & я└п╦пЁ п╥п╫п╟п╣я┌ & п╫я┐, п╣я│п╩п╦ я─п╟я│я│я┐п╤п╢п╟я┌я▄ п╥п╢я─п╟п╡п╬,  я┌п╬ я┘.п╣.п╥. \\\hline
+ п╒п╬  & я┌п╬ п╤п╣     & п╟ я█я┌п╬ п▓п²п╖ \\\hline
 \end{longtable}
 
-Ну и без рисунка \ref{fig1} нам никак не обойтись:
+п²я┐ п╦ п╠п╣п╥ я─п╦я│я┐п╫п╨п╟ \ref{fig1} п╫п╟п╪ п╫п╦п╨п╟п╨ п╫п╣ п╬п╠п╬п╧я┌п╦я│я▄:
 
 \begin{figure}
- \caption{Так себе рисуночек}\label{fig1}
+ \caption{п╒п╟п╨ я│п╣п╠п╣ я─п╦я│я┐п╫п╬я┤п╣п╨}\label{fig1}
  \centering{
   \begin{picture}(100,50)
    \put(  0, 0){\line( 1, 0){100}}
@@ -82,9 +93,9 @@
 \end{figure}
 
 \backmatter
- \Conclusion на последок
+ \Conclusion п╫п╟ п©п╬я│п╩п╣п╢п╬п╨
  \begin{thebibliography}{99}
   \bibitem{bib:test1}
-  Нечто изданное некогда.
+  п²п╣я┤я┌п╬ п╦п╥п╢п╟п╫п╫п╬п╣ п╫п╣п╨п╬пЁп╢п╟.
  \end{thebibliography}
 \end{document}
